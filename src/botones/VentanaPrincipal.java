@@ -18,23 +18,21 @@ public class VentanaPrincipal extends JFrame{
     
     private PanelBotones botones;
 
-    public VentanaPrincipal() {
-        setTitle("DISCOTIENDA");
+    public VentanaPrincipal(int fil,int col) {
+        setTitle("BOTONES");
         setSize(800, 600);
         setLocationRelativeTo(null);        
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
         setLayout(null);
-        botones = new PanelBotones(4,4);
+        
+        botones = new PanelBotones(fil,col);
         botones.setBounds(10, 10, 780, 550);
-        add(botones);
-        
-        
-        
-        
-        
+        add(botones);   
         
         setVisible(true);
+        
+   
     }
    
 }

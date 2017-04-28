@@ -58,7 +58,7 @@ public class FilasColumnas extends JDialog implements ActionListener{
         panel.setLayout(null);
         add(panel);
       
-        setTitle( "CREAR ARTISTA               " );
+        setTitle( "Filas y Columnas" );
         setLocationRelativeTo(null);
         setDefaultCloseOperation( JDialog.DISPOSE_ON_CLOSE);
         setLayout( null);
@@ -97,10 +97,8 @@ public class FilasColumnas extends JDialog implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         fil=Integer.parseInt(filas.getText());
         col=Integer.parseInt(columnas.getText());
-        //ventana.botones(fil,col);
-        botones = new PanelBotones(fil,col);
-        botones.setBounds(10, 10, 780, 550);
-        ventana.add(botones);
+        
+        VentanaPrincipal v = new VentanaPrincipal(fil,col);
         
         setVisible(true);
         

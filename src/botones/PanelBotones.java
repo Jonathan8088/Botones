@@ -29,12 +29,12 @@ public class PanelBotones extends JPanel implements ActionListener{
 
     private int x=10,y=10,key;
 
-    
+    Map<Integer, JButton> map = new HashMap<Integer, JButton>();
     
     
     
     public PanelBotones(int fil, int col) {
-        Map<Integer, JButton> map = new HashMap<Integer, JButton>();
+        
         key=0;
         setBorder(BorderFactory.createTitledBorder(""));
         
@@ -45,7 +45,7 @@ public class PanelBotones extends JPanel implements ActionListener{
         for (int i = 0; i < fil; i++) {
             x=10;
             for (int j = 0; j < col; j++) {
-                aceptar = new JButton( "Boton "+i+" "+j );
+                aceptar = new JButton( "Boton "+i+"-"+j );
                 aceptar.setActionCommand( ACEPTAR );
                 aceptar.addActionListener(this);
                 aceptar.setBounds(x, y, 100, 20);
@@ -63,8 +63,8 @@ public class PanelBotones extends JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
-        aceptar.setBackground(Color.red);
+        JButton llave=map.getOrDefault(key, aceptar);
+        llave.setBackground(Color.red);
         
         
     }
